@@ -14,4 +14,5 @@ action "ACTION1" {
 action "ACTION2" {
   uses = "./action-a"
   args = "\"Hello world, I'm $(cat /github/home/test.txt)!\""
+  needs = ["ACTION1"]
 }
