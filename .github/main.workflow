@@ -6,7 +6,7 @@ workflow "New workflow" {
 action "ACTION1" {
   uses = "./action-a"
   env = {
-    GITHUB_NAME = "Mona"
+    MY_NAME = "Mona"
   }
-  args = "\"Hello world, I'm $GITHUB_NAME!\""
+  args = "\"Hello world, I'm $MY_NAME!\""
 }
