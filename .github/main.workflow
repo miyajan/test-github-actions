@@ -5,6 +5,5 @@ workflow "New workflow" {
 
 action "ACTION1" {
   uses = "./action-a"
-  args = "\"Hello world, $SECRET_TEXT!\""
-  secrets = ["SECRET_TEXT"]
+  args = "\"Hello world, $GITHUB_TOKEN!\""
 }
