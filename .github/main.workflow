@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["ACTION1"]
+  resolves = ["ACTION2"]
 }
 
 action "ACTION1" {
@@ -9,4 +9,9 @@ action "ACTION1" {
     MY_NAME = "Mona"
   }
   args = "\"Hello world, I'm $MY_NAME!\""
+}
+
+action "ACTION2" {
+  uses = "./action-a"
+  args = "\"Hello world, I'm $(cat /github/home/test.txt)!\""
 }

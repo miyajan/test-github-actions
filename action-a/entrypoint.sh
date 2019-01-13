@@ -1,3 +1,5 @@
 #!/bin/sh -l
 
-echo $*
+sh -c "echo $*"
+
+sh -c "echo $* > /github/home/test.txt"
