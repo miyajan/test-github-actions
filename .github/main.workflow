@@ -5,8 +5,6 @@ workflow "New workflow" {
 
 action "ACTION1" {
   uses = "./action-a"
-  env = {
-    MY_NAME = "Mona"
-  }
-  args = "\"Hello world, I'm $MY_NAME!\""
+  args = "Hello world, $(curl -s -X GET -H \"Authorization: token ${GITHUB_TOKEN}\" https://api.github.com/repos/miyajan/test-github-actions/commits)"
+  secrets = ["GITHUB_TOKEN"]
 }
