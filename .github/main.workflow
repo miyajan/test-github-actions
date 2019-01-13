@@ -1,15 +1,10 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["ACTION2"]
+  resolves = ["ACTION1"]
 }
 
 action "ACTION1" {
   uses = "./action-a"
-  args = "\"Hello world, I'm Action1!\""
-}
-
-action "ACTION2" {
-  needs = "ACTION1"
-  uses = "./action-a"
-  args = "\"Hello world, I'm Action2!\""
+  args = "\"Hello world, $SECRET_TEXT!\""
+  secrets = ["SECRET_TEXT"]
 }
